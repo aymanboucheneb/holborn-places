@@ -1,0 +1,151 @@
+digraph G {
+    splines="FALSE";
+
+    Holborn[label="Holborn, Camden Borough", fontsize=45.0, shape=box, fillcolor=green, style=filled]
+
+    /* default colour, style, shape for nodes */
+    node[fillcolor="#30c370",
+        style=filled,
+        shape="square"]
+
+
+    /* Entities Places types*/
+    Foodchain [label=" Fast Moving\nFood chain ", shape="ellipse"]
+    
+    Slowmovingfoodchain [label=" Slow Moving\nFood chain ", shape="ellipse"]
+    Faros[label="Tohbang", shape="ellipse"]
+    Mcdonsellst[label="Burgers, fries, etc", shape="ellipse"]
+    Pretthemangert [label=<For school kids,<br/>for the office<br/>people>, shape="ellipse"]
+
+    Mcdon[label="Mcdonalds", shape="ellipse"]
+    Mcdonsells[label="Burgers, fries, etc", shape="ellipse"]
+    Pretthemanger [label=" For school kids, for the office people", shape="ellipse"]
+    
+   /* Entities -- Cafes*/
+    Starbucks [label="Starbucks"]
+    CafeNero [label="Cafe Nero"]
+    Pret [label="Pret"]
+
+    /*Entities -- Fast-foods*/
+    Mcdonalds [label="Mcdonalds"]
+    BurgerKing [label="Burger King"]
+    Leon [label="Leon"]
+
+    Subway [label="Subway", shape=rectangle]
+
+    /*Entities -- Diners*/
+    HonestBurgers [label="Honest Burgers"]
+    TheBullSteakExpert [label="The Bull Steak Expert"]
+    TheDelaunay [label="The Delaunay"]
+
+    Parks [label="Parks",  shape=egg,  color=green, style=wedged]
+    Museums[label="Museums", shape=box, color=brown]
+    Restaurants[shape=diamond, color=yellow]
+
+    /* Entities -- restaurants */
+    RedLionSquare [label="Red \n Lion Square", 
+        shape="square", 
+        fillcolor=red,
+        style=filled,]
+
+    PretAManger[label="Pret A Manger",
+        color=darkred,
+        style=filled , 
+        fontcolor="white"]
+
+    BritishMuseum[label="British \n Museum", 
+        shape=triangle, 
+        color=beige, 
+        style=filled]
+
+
+    /* Entities -- parks */
+    RedLionSquare [label="Red Lion Square", shape="square"]
+    
+    BloomsburySquareGarden [label="Bloomsbury Square Garden", shape="square"]
+    
+    QueenSquareGardens [label="Queen Square Gardens", shape="square"]
+    
+    LincolnsInnFields [label="Lincoln's Inn Fields", shape="square"]
+
+    GarysInnGardens [label="Gary's Inn Gardens", shape="square"]
+
+    DruryLaneGardens [label="Drury Lane Gardens", shape="sqare"]
+
+
+
+    UAL[color="#000000", style=filled, fontcolor="white"]
+    LSE[color="red", style=filled, fontcolor="white"]
+    KCL[color="red", style=filled, fontcolor="white"]
+
+    Supermarkets [label="Supermarkets", shape=circle]
+
+    /* Place Enitities names*/
+    TescoExpress [label="Tesco\n  Express", shape=rectangle]
+    Sainsburys [label="Sainsburys", shape=rectangle]
+    Waitrose [label="Waitrose", shape=rectangle]
+    MarksAndSpencers [label="Marks &\n  Spencers", shape=rectangle]
+    AmazonFresh [label="Amazon\n  Fresh", shape=rectangle]
+
+    /* Data entities */
+    AmazonFreshInfo [label=
+    "Amazon Fresh\nis a automated\n 
+    self servic\n store using cameras\n 
+    to track what\n you buy in store.", shape=rectangle]
+
+
+
+    /* Relationships */
+    Holborn -> Parks
+    Holborn -> Restaurants
+    Holborn -> Museums
+    Holborn -> Universities
+    Parks -> RedLionSquare
+    Museums -> BritishMuseum
+    Restaurants -> PretAManger
+    Universities -> UAL, LSE, KCL
+
+    Slowmovingfoodchain-> FarosHolborn
+    FarosHolborn -> Mcdonsellst
+    FarosHolborn -> Pretthemangert
+    Foodchain -> Mcdon
+    Mcdon -> Mcdonsells
+    Mcdon -> Pretthemanger
+
+    Holborn -> Foodchain
+    Holborn -> Slowmovingfoodchain
+
+    Restaurants -> Fastfood 
+    Restaurants -> Diners 
+    Restaurants -> Cafes 
+    
+    Cafes -> Starbucks  
+    Cafes -> CafeNero
+    Cafes -> Pret
+
+    Fastfood -> Mcdonalds
+    Fastfood -> BurgerKing
+    Fastfood -> Leon
+    Fastfood -> Subway
+    
+    Diners -> HonestBurgers
+    Diners -> TheBullSteakExpert
+    Diners -> TheDelaunay
+
+    Holborn -> Supermarkets
+
+    Supermarkets -> TescoExpress
+    Supermarkets -> Sainsburys
+    Supermarkets -> MarksAndSpencers
+    Supermarkets -> AmazonFresh
+    Supermarkets -> Waitrose
+    AmazonFresh -> AmazonFreshInfo
+
+    Parks -> RedLionSquare
+    Parks -> LincolnsInnFields
+    Parks -> BloomsburySquareGarden
+    Parks -> QueenSquareGardens
+    Parks -> GarysInnGardens
+    Parks -> DruryLaneGardens
+
+}
